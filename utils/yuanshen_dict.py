@@ -11,8 +11,7 @@ exports = {
             "output": "titles.txt",
             "api_params": {
                 # Results per API request; same as `aplimit` in MediaWiki docs. (optional)
-                "aplimit": 500,
-                "apihighlimits": 500
+                "aplimit": 200
             }
         }
     },
