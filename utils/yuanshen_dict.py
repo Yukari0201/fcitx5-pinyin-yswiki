@@ -12,8 +12,9 @@ exports = {
         },
         "api_params": {
             # Results per API request; same as `aplimit` in MediaWiki docs. (optional)
-            "aplimit": 500
-        },
+            "aplimit": 500,
+            "apihighlimits": 500
+        }
     },
     "tweaks": tweaks + [tweak_opencc_t2s],
     "converter": {
