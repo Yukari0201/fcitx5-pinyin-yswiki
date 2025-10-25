@@ -4,7 +4,7 @@ on:
   # Automatic build paused - see #13
   # push:
   #   branches:
-  #     - pkg-moegirl
+  #     - pkg-yuanshen
   workflow_dispatch: {}
 
 jobs:
@@ -31,7 +31,7 @@ jobs:
       - name: Checkout profile
         uses: actions/checkout@v4
         with:
-          ref: pkg-moegirl
+          ref: pkg-yuanshen
           persist-credentials: false
           fetch-depth: '0'
           path: 'profile'
@@ -45,13 +45,13 @@ jobs:
           # encoding: utf-8
           ---
           recipe:
-            Rx: moegirl-dict
+            Rx: yuanshen-dict
             description: >-
-              Install moegirl dict from fcitx5-pinyin-moegirl
+              Install yuanshen dict from fcitx5-pinyin-yuanshen
           download_files: >-
-            moegirl.dict.yaml::https://github.com/outloudvi/mw2fcitx/releases/download/$DATE/moegirl.dict.yaml
+            yuanshen.dict.yaml::https://github.com/outloudvi/mw2fcitx/releases/download/$DATE/yuanshen.dict.yaml
           install_files: >-
-            moegirl.dict.yaml
+            yuanshen.dict.yaml
           EOF
           git add ./LATEST
           git add ./recipe.yaml
@@ -63,7 +63,7 @@ jobs:
       - name: Push the commit
         uses: ad-m/github-push-action@master
         with:
-          branch: pkg-moegirl
+          branch: pkg-yuanshen
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: profile
 
