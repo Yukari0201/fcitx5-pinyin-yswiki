@@ -9,7 +9,11 @@ exports = {
         ],
         "kwargs": {
             "output": "titles.txt"
-        }
+        },
+        "api_params": {
+            # Results per API request; same as `aplimit` in MediaWiki docs. (optional)
+            "aplimit": 500
+        },
     },
     "tweaks": tweaks + [tweak_opencc_t2s],
     "converter": {
