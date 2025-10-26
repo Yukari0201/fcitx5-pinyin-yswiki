@@ -1,4 +1,4 @@
-from mw2fcitx.tweaks.moegirl import tweaks, tweak_opencc_t2s
+from mw2fcitx.tweaks.moegirl import tweaks
 
 exports = {
     "source": {
@@ -11,28 +11,25 @@ exports = {
             "output": "titles.txt",
             "api_params": {
                 # Results per API request; same as `aplimit` in MediaWiki docs. (optional)
-                "aplimit": 200
-            }
-        }
+                "aplimit": "max"
+            },
+        },
     },
-    "tweaks": tweaks + [tweak_opencc_t2s],
-    "converter": {
-        "use": "opencc",
-        "kwargs": {
-            "fixfile": "fixfile.json"
-        }
-    },
-    "generator": [{
-        "use": "rime",
-        "kwargs": {
-            "name": "yuanshen",
-            "version": "0.0.1",
-            "output": "yuanshen.dict.yaml"
-        }
-    }, {
-        "use": "pinyin",
-        "kwargs": {
-            "output": "yuanshen.dict"
-        }
-    }]
+    "tweaks": tweaks,
+    "converter": {},
+    "generator": [
+        {
+            "use": "rime",
+            "kwargs": {
+                "name": "yuanshen",
+                "version": "0.0.1",
+                "output": "yuanshen.dict.yaml",
+            },
+        },
+        {
+            "use": "pinyin",
+            "kwargs":
+            {"output": "yuanshen.dict"}
+        },
+    ],
 }
