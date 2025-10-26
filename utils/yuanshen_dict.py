@@ -16,7 +16,12 @@ exports = {
         },
     },
     "tweaks": tweaks,
-    "converter": {},
+    "converter": {
+        "use": "pypinyin",
+        "kwargs": {
+            "fixfile": "fixfile.json"
+        }
+    },
     "generator": [
         {
             "use": "rime",
